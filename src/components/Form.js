@@ -86,6 +86,7 @@ export default function Form(props) {
             <a
                 href="https://folksamforetag.b2clogin.com/folksamforetag.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_signup_signin_cgi&client_id=d80ce3d6-6729-47a0-a636-82e1429d93c2&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid%20https%3A%2F%2Ffolksamforetag.onmicrosoft.com%2Fapi%2Fdemo&response_type=id_token%20token&prompt=login"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 Testa inloggning
             </a>
