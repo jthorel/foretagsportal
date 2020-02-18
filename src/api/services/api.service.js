@@ -9,7 +9,7 @@ async function getGroups(req) {
         : "folksamforetag.onmicrosoft.com";
 
     const token = await getAPIToken(B2C_TENANT);
-    var queryString = `users/${objectId}/$links/memberOf?api-version=1.6`;
+    const queryString = `users/${objectId}/$links/memberOf?api-version=1.6`;
     // GET https://graph.windows.net/myorganization/users/{user_id}/$links/memberOf?api-version
     const res = await fetch(
         `https://graph.windows.net/${B2C_TENANT}/${queryString}`,
@@ -54,14 +54,14 @@ async function getGroups(req) {
 // ===============================
 function getAPIToken(tenant) {
     console.log("1. creating API token");
-    var authorityHostUrl = "https://login.microsoftonline.com";
-    var authorityUrl = authorityHostUrl + "/" + tenant;
-    var applicationId =
+    const authorityHostUrl = "https://login.microsoftonline.com";
+    const authorityUrl = authorityHostUrl + "/" + tenant;
+    const applicationId =
         process.env.B2C_GRAPH_API_ID || "c2f7fe24-b96f-45db-94ae-68ef7625a438"; // Application Id of app registered under AAD.
-    var clientSecret =
+    const clientSecret =
         process.env.B2C_GRAPH_API_SECRET || "tUur[tTZc[.51[X8BTklTIkd4:B/?yWM"; // Secret generated for app. Read this environment variable.
-    var resource = "https://graph.windows.net/"; // URI that identifies the resource for which the token is valid.
-    var context = new AuthenticationContext(authorityUrl);
+    const resource = "https://graph.windows.net/"; // URI that identifies the resource for which the token is valid.
+    const context = new AuthenticationContext(authorityUrl);
     return new Promise((resolve, reject) => {
         context.acquireTokenWithClientCredentials(
             resource,
